@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="divport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .min-flex {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .min-flex-dir-left {
+      flex-direction: row;
+    }
+    .min-flex-dir-right {
+      flex-direction: row-reverse;
+    }
+    .min-flex-dir-top {
+      flex-direction: column;
+    }
+    .min-flex-dir-bottom {
+      flex-direction: column-reverse;
+    }
+    .min-flex-main-center {
+      justify-content: center;
+    }
+    .min-flex-main-start {
+      justify-content: flex-start;
+    }
+    .min-flex-main-end {
+      justify-content: flex-end;
+    }
+    .min-flex-main-between {
+      justify-content: space-between;
+    }
+    .min-flex-main-around {
+      justify-content: space-around;
+    }
+    .min-flex-wrap-nowrap {
+      flex-wrap: nowrap;
+    }
+    .min-flex-wrap-wrap {
+      flex-wrap: wrap;
+    }
+    .min-flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .min-flex-align-center {
+      align-items: center;
+    }
+    .min-flex-align-top {
+      align-items: flex-start;
+    }
+    .min-flex-align-bottom {
+      align-items: flex-end;
+    }
+    .min-flex-align-baseline {
+      align-items: baseline;
+    }
+    .min-flex-align-stretch {
+      align-items: stretch;
+    }
+    .min-flex-1 {
+      flex: 1
+    }
+    .min-flex-2 {
+      flex: 2
+    }
+    .min-flex-3 {
+      flex: 3
+    }
+    .min-flex-4 {
+      flex: 4
+    }
+    .min-flex-5 {
+      flex: 5
+    }
+    .min-flex-6 {
+      flex: 6
+    }
+    .min-flex-7 {
+      flex: 7
+    }
+    .min-flex-8 {
+      flex: 8
+    }
+  </style>
+
+  <style>
+    .box {
+      width: 800px;
+      margin: auto;
+    }
+    .bg {
+      margin: 0 22px;
+      background: #aaaaaa;
+      min-height: 150px;
+    }
+    .tips {
+      margin: 0 22px;
+      padding: 22px;
+      font-size: 28px;
+      background: pink;
+      color: #ffffff;
+    }
+    .hint {
+      background: orange;
+    }
+    .item {
+      border-radius: 12px; 
+      min-width: 100px;
+      min-height: 100px;
+      background: burlywood;
+      color: #ffffff;
+      font-size: 40px;
+      margin: 3px;
+    }
+    .item:nth-child(odd) {
+      background: yellowgreen;
+    }
+    .item1 {
+      border-radius: 12px;
+      background: burlywood;
+      color: #ffffff;
+      font-size: 40px;
+      height: 100px;
+      margin: 3px;
+    }
+    .item1:nth-child(odd) {
+      background: yellowgreen;
+    }
+    .copy {
+      padding: 10px 18px;
+      border-radius: 12px; 
+      background: olive;
+    }
+    .btn {
+      display: inline-block;
+      margin: 12px 0 12px 22px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: cyan;
+      color: #ffffff;
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+    <div>
+      <div class="min-flex bg">
+        <div class="item min-flex">1</div>
+        <div class="item min-flex">2</div>
+        <div class="item min-flex">3</div>
+      </div>
+      <div class="tips">class="min-flex"</div>
+      <div class="tips hint min-flex min-flex-main-between">
+        <div>默认居中对齐(对应下面的默认值)</div>
+      </div>
+    </div>
+    <div class="btn">默认</div>
+
+    <div>
+      <div class="min-flex bg flex-j">
+        <div class="item min-flex">1</div>
+        <div class="item min-flex">2</div>
+        <div class="item min-flex">3</div>
+      </div>
+      <div class="tips tips-j">class="min-flex min-flex-center"</div>
+      <div class="tips hint min-flex min-flex-main-between">
+        <div>对应flex -> justify-content属性</div>
+      </div>
+    </div>
+    <div class="btn btn-j" data-min="min-flex-main-start">左对齐</div>
+    <div class="btn btn-j" data-min="min-flex-main-end">右对齐</div>
+    <div class="btn btn-j" data-min="min-flex-main-center">居中对齐(默认)</div>
+    <div class="btn btn-j" data-min="min-flex-main-between">两端对齐</div>
+    <div class="btn btn-j" data-min="min-flex-main-around">两侧对齐</div>
+
+    <div>
+      <div class="min-flex bg flex-d">
+        <div class="item min-flex">1</div>
+        <div class="item min-flex">2</div>
+        <div class="item min-flex">3</div>
+      </div>
+      <div class="tips tips-d">class="min-flex min-flex-dir-left"</div>
+      <div class="tips hint min-flex min-flex-main-between">
+        <div>对应flex -> flex-direction属性</div>
+      </div>
+    </div>
+    <div class="btn btn-d" data-min="min-flex-dir-left">水平向右(默认)</div>
+    <div class="btn btn-d" data-min="min-flex-dir-right">水平向左</div>
+    <div class="btn btn-d" data-min="min-flex-dir-top">垂直向下</div>
+    <div class="btn btn-d" data-min="min-flex-dir-bottom">垂直向上</div>
+
+    <div>
+      <div class="min-flex bg flex-a">
+        <div class="item min-flex">1</div>
+        <div class="item">2</div>
+        <div class="item min-flex">3</div>
+      </div>
+      <div class="tips tips-a">class="min-flex min-flex-align-center"</div>
+      <div class="tips hint min-flex min-flex-main-between">
+        <div>对应flex -> align-items属性</div>
+      </div>
+    </div>
+    <div class="btn btn-a" data-min="min-flex-align-top">起点对齐</div>
+    <div class="btn btn-a" data-min="min-flex-align-bottom">终点对齐</div>
+    <div class="btn btn-a" data-min="min-flex-align-center">中点对齐(默认)</div>
+    <div class="btn btn-a" data-min="min-flex-align-baseline">基线对齐</div>
+    <div class="btn btn-a" data-min="min-flex-align-stretch">拉伸铺满</div>
+    
+    <div>
+      <div class="min-flex bg flex-w">
+        <div class="item min-flex">1</div>
+        <div class="item min-flex">2</div>
+        <div class="item min-flex">3</div>
+        <div class="item min-flex">4</div>
+        <div class="item min-flex">5</div>
+        <div class="item min-flex">6</div>
+        <div class="item min-flex">7</div>
+        <div class="item min-flex">8</div>
+        <div class="item min-flex">9</div>
+      </div>
+      <div class="tips tips-w">class="min-flex min-flex-wrap-nowrap"</div>
+      <div class="tips hint min-flex min-flex-main-between">
+        <div>对应flex -> flex-wrap属性</div>
+      </div>
+    </div>
+    <div class="btn btn-w" data-min="min-flex-wrap-nowrap">不换行(默认)</div>
+    <div class="btn btn-w" data-min="min-flex-wrap-wrap">换行向下</div>
+    <div class="btn btn-w" data-min="min-flex-wrap-reverse">换行向上</div>
+
+    <div>
+      <div class="min-flex bg">
+        <div class="item1 min-flex min-flex-1">1</div>
+        <div class="item1 min-flex min-flex-1">1</div>
+        <div class="item1 min-flex min-flex-1">1</div>
+      </div>
+      <div class="tips">min-flex-number 项目大小(最高min-flex-8)</div>
+    </div>
+  
+    <div>
+      <div class="min-flex bg">
+        <div class="item1 min-flex min-flex-1">1</div>
+        <div class="item1 min-flex min-flex-2">2</div>
+        <div class="item1 min-flex min-flex-1">1</div>
+      </div>
+      <div class="tips">min-flex-number 项目大小(最高min-flex-8)</div>
+    </div>
+
+    <div>
+      <div class="min-flex bg">
+        <div class="item1 min-flex min-flex-1">1</div>
+        <div class="item1 min-flex min-flex-2">2</div>
+        <div class="item1 min-flex min-flex-3">3</div>
+      </div>
+      <div class="tips">min-flex-number 项目大小(最高min-flex-8)</div>
+    </div>
+  
+    <div>
+      <div class="min-flex bg">
+        <div class="item1 min-flex min-flex-1">1</div>
+        <div class="item1 min-flex min-flex-2">2</div>
+        <div class="item1 min-flex min-flex-8">12</div>
+      </div>
+      <div class="tips">min-flex-number 项目大小(最高min-flex-8)</div>
+    </div>
+
+  </div>
+</body>
+<script>
+  ;[...document.querySelectorAll('.btn-j')].forEach(el => {
+    el.addEventListener('click', (e) =>{
+      let str = e.target.getAttribute('data-min')
+      
+      document.querySelector('.tips-j').innerHTML = `class="min-flex ${str}"`
+      document.querySelector('.flex-j').className = 'min-flex bg flex-j ' + str
+    })
+  })
+
+  ;[...document.querySelectorAll('.btn-d')].forEach(el => {
+    el.addEventListener('click', (e) =>{
+      let str = e.target.getAttribute('data-min')
+      document.querySelector('.tips-d').innerHTML = `class="min-flex ${str}"`
+      document.querySelector('.flex-d').className = 'min-flex bg flex-d ' + str
+    })
+  })
+
+  ;[...document.querySelectorAll('.btn-a')].forEach(el => {
+    el.addEventListener('click', (e) =>{
+      let str = e.target.getAttribute('data-min')
+      document.querySelector('.tips-a').innerHTML = `class="min-flex ${str}"`
+      document.querySelector('.flex-a').className = 'min-flex bg flex-a ' + str
+    })
+  })
+
+  ;[...document.querySelectorAll('.btn-w')].forEach(el => {
+    el.addEventListener('click', (e) =>{
+      let str = e.target.getAttribute('data-min')
+      document.querySelector('.tips-w').innerHTML = `class="min-flex ${str}"`
+      document.querySelector('.flex-w').className = 'min-flex bg flex-w ' + str
+    })
+  })
+</script>
+</html>
